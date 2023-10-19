@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Feifan</string>
+    <string name="common_update">更新</string>
+    <string name="common_delete">删除</string>
+    <string name="common_alert">提示</string>
+    <string name="common_confirm">确认</string>
+    <string name="common_cancel">取消</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">选择节点</string>
+    <string name="choose_txt">选择</string>
+    <string name="user_account">用户账号</string>
+    <string name="connected_txt">已连接</string>
+    <string name="no_open_txt">未开启</string>
+    <string name="off_connect_txt">断开连接</string>
+    <string name="on_connect_txt">开启连接</string>
+    <string name="invalid_configuration">无效配置</string>
+    <string name="time_out_txt">超时</string>
+    <string name="remote_server_remark">远程服务备注</string>
+    <string name="remote_addr">远程地址</string>
+    <string name="remote_server_sni">远程服务 SNI</string>
+    <string name="remote_port">远程端口</string>
+    <string name="default_port">443</string>
+    <string name="password">密码</string>
+    <string name="button_service__start">连接</string>
+    <string name="button_service__starting">正在打开连接</string>
+    <string name="button_service__stop">断开连接</string>
+    <string name="button_service__stopping">正在断开连接</string>
+    <string name="verify_certificate">验证证书</string>
+    <string name="label_clash">过滤大陆域名/IP</string>
+    <string name="label_allowLan">允许局域网访问</string>
+    <string name="enable_ipv6">开启 IPv6</string>
+    <string name="stop_service">io.github.trojan_gfw.igniter.STOP_SERVICE</string>
+    <string name="bind_service">io.github.trojan_gfw.igniter.BIND_SERVICE</string>
+    <string name="connected_to__in__ms">连接 %1$s 用时 %2$sms.</string>
+    <string name="failed_to_connect_to__">连接失败 %1$s: %2$s</string>
+    <string name="notification_channel_id">igniter_notify_chan</string>
+    <string name="notification_channel_name">Igniter 通知</string>
+    <string name="notification_starting_service">开启服务</string>
+    <string name="main_restart_proxy_service_tip">启用新的过滤应用配置请重新应用</string>
+    <string name="clipboard_import_tip">导入粘贴板中的 Trojan 地址吗?</string>
+    <string name="main_proxy_port_copied_to_clipboard">代理端口 %1$s 已复制到剪贴板</string>
+    <string name="common_save_success">保存成功</string>
+    <string name="main_save_failed">保存失败</string>
+    <string name="trojan_service_not_available">Trojan 服务不可用</string>
+    <string name="trojan_service_error">Trojan 服务错误</string>
+    <string name="notification_listen_port">代理端口: %1$s</string>
+    <string name="proxy_service_not_connected">代理服务暂未开启</string>
+    <!-- Preference Titles -->
+    <string name="project_page">项目地址</string>
+    <string name="about_header">关于</string>
+    <string name="credits_header">鸣谢</string>
+    <string name="project_license">许可</string>
+    <string name="version_title">版本</string>
+    <string name="author_title">开发者</string>
+
+    <!-- Sync Preferences -->
+    <string name="privacy_policy_txt">Privacy Policy</string>
+    <string name="about_txt">About</string>
+    <string name="action_about">关于</string>
+    <string name="version_txt">Version：v %s</string>
+</resources>
+

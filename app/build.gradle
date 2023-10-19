@@ -1,0 +1,104 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.main.feifan'
+    compileSdk 34
+    ndkVersion "23.1.7779620"
+    defaultConfig {
+        applicationId "com.main.feifan"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+        externalNativeBuild {
+            cmake {
+                arguments "-DANDROID_CPP_FEATURES=rtti exceptions"
+            }
+        }
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        archivesBaseName = "$applicationId-v$versionName-$versionCode"
+        buildConfigField "String", "BASE_URL_DEBUG", "\"https://api.planck.cool/sinc/\""
+        buildConfigField "String", "BASE_URL", "\"https://api.sincoheren.com/sinc/\""
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix '.debug'
+            debuggable true
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                    'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    externalNativeBuild {
+        cmake {
+            path file('src/main/cpp/CMakeLists.txt')
+        }
+    }
+    compileOptions {
+        // Flag to enable support for the new language APIs
+        coreLibraryDesugaringEnabled true
+    }
+    packagingOptions {
+        jniLibs {
+            // During installation, the installer decompresses the libraries, and the linker loads
+            // the decompressed libraries at runtime; in this case, the APK would be smaller, but
+            // installation time might be slightly longer.
+            // We optimize for size to make users happy
+            useLegacyPackaging = true
+            keepDebugSymbols += ['*/armeabi-v7a/libgojni.so', '*/arm64-v8a/libgojni.so', '*/x86/libgojni.so', '*/x86_64/libgojni.so']
+        }
+    }
+    splits {
+        abi {
+            enable true
+            reset()
+            include "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+            universalApk true
+        }
+    }
+
+    buildFeatures {
+        aidl true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.10.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.2'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
+    implementation 'androidx.navigation:navigation-fragment:2.7.4'
+    implementation 'androidx.navigation:navigation-ui:2.7.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation project(":x_base")
+    //api(name: 'golibs', ext: 'aar')
+    implementation files('libs/golibs.aar')
+    implementation 'com.google.code.gson:gson:2.8.9'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+    implementation 'com.github.stealthcopter:AndroidNetworkTools:0.4.5.3'
+}

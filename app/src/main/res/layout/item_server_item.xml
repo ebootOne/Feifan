@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="config"
+            type="com.main.feifan.servers.data.TrojanConfigWrapper" />
+        <variable
+            name="isSelect"
+            type="Boolean" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="17dp"
+        android:paddingHorizontal="16dp"
+        android:background="@drawable/home_bg_btn_icont"
+        >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/serverRemarkTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:text="@{config.remoteServerRemark}"
+                    />
+                <TextView
+                    android:id="@+id/mPingDelayTimeView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20ms"
+                    android:layout_marginTop="2dp"
+                    android:textColor="#ff475569"
+                    android:textSize="8sp"
+                    />
+            </LinearLayout>
+
+
+
+        <!--android:background="@{isSelect ? @drawable/btn_bg_blue : @drawable/btn_bg_no_gray}"-->
+            <TextView
+                android:layout_width="46dp"
+                android:layout_height="22dp"
+                android:background="@{config.mSelected ? @drawable/btn_bg_blue : @drawable/btn_bg_no_gray}"
+                android:textColor="@{config.mSelected ? @color/white : @color/main_btn_no_select_gray}"
+                android:text="@string/choose_txt"
+                android:textSize="8sp"
+                android:gravity="center"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                />
+
+    </RelativeLayout>
+</layout>

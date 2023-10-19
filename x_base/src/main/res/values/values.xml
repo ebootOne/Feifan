@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="debug_databinding_warning">%s 未遵循 DataBinding 严格模式，存在 Null 安全风险</string>
+    <string name="network_not_good">网络不给力</string>
+    <string name="invalid_configuration">无效配置</string>
+</resources>
